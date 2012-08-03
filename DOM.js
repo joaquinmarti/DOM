@@ -13,7 +13,7 @@
  * https://github.com/joaquinmarti/DOM
  */
 
-DOM = (function(undefined) {
+;var DOM = (function($, undefined) {
 
   var _cache = [];
 
@@ -21,7 +21,7 @@ DOM = (function(undefined) {
   var _get = function(selector) {
 
     // Check if the selector is valid
-    if (!selector || typeof selector != 'string') {
+    if (!selector || typeof selector !== 'string') {
       return false;
     }
 
@@ -51,6 +51,6 @@ DOM = (function(undefined) {
     get: _get,
     clear: _clear,
     refresh: _refresh
-  }
+  };
 
-})();
+})(jQuery);
