@@ -9,6 +9,7 @@
  * DOM.get('#nav'); // Get an element querying the DOM or from cache
  * DOM.clear('#nav); // Clear the object from Cache
  * DOM.refresh(); // Delete all Cache references
+ * DOM.live('#nav'); // Get an element from live DOM, without cache
  *
  * https://github.com/joaquinmarti/DOM
  */
@@ -47,10 +48,16 @@
     _cache = [];
   };
 
+  // Get the object without cache
+  var _live = function(selector) {
+    return $(selector);
+  };
+
   return {
     get: _get,
     clear: _clear,
-    refresh: _refresh
+    refresh: _refresh,
+    live: _live
   };
 
 })(jQuery);
